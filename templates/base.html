@@ -13,13 +13,40 @@
     <title>Cook Book</title>
 </head>
 <body>
-    <h1>I'm part of this base html</h1>
+    
+    <header>
+        <!--full screen-->
+        <nav class="cyan accent-3">
+            <div class="nav-wrapper">
+              <a href="{{ url_for('get_recipes') }}" class="brand-logo">Cook Book</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                <li><a href="#">Contents</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Become a member</a></li>
+                <li><a href="#">Add recipe</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <!--mobile collapsible-->
+          <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align">Cook Book</h4></li>
+            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                <li><a href="#">Contents</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Become a member</a></li>
+                <li><a href="#">Add recipe</a></li>
+          </ul>
+    </header>
+
     {% block content %}
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/style.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
 </body>
